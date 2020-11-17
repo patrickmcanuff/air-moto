@@ -1,3 +1,10 @@
+
+# This file should contain all the record creation needed to seed the database with its default values.
+# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
+#
+# Examples:
+#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
+#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
 
 # make accounts for teammates so that they can login, make sure all users can access own stuff
@@ -50,5 +57,6 @@ Booking.create(
     motorcycle: moto1,
     user: johnwick,
     date_start: Time.new(2021, 1, 2),
-    date_end: Time.new(2021, 1, 14)
+    date_end: Time.new(2021, 1, 14),
+    price: 2160
 )
