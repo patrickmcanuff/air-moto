@@ -1,2 +1,4 @@
 class MotorcyclesController < ApplicationController
+
+
 end
