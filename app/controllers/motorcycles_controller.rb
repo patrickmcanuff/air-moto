@@ -45,7 +45,7 @@ class MotorcyclesController < ApplicationController
       layout: 'application'
     )
   end
-
+end
   private
 
   def motorcycle_params
