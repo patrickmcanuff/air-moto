@@ -4,6 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :motorcycles
-  has_many :bookings
+  has_many :motorcycles, dependent: :destroy
+  has_many :bookings, dependent: :destroy
 end
