@@ -5,11 +5,31 @@ class MotorcyclesController < ApplicationController
       @motorcycles = Motorcycle.all
     end
 
+    def show
+        @motorcycle = Motorcycle.find(params[:id])
+      end
+    
+    def edit
+    end
+
     def new
         @motorcycle = Motorcycle.new
     end
 
-  def show
-    @motorcycle = Motorcycle.find(params[:id])
-  end
+    def create
+        @Motorcycle = Motorcycle.new(motorcycle_params)
+        if @motorcycle.save
+          redirect_to motorcycles_path
+        else
+          render :new
+        end
+    end
+ 
+    private
+
+    def motorcycle_params
+        params.require(:motorcycle).permit(:model, :year, :location, :brand)
+    end
+
+
 end

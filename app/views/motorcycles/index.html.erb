@@ -1,9 +1,32 @@
 <div class="container mt-3">
-      <h1>All of our motorcycles</h1>
-    </div>
+ <h1>All of our motorcycles</h1>
+</div>
+
+ <p>All <%= Motorcycle.count %> motorcycles.</p>
 
 
+ <div class="row">
+ <% @motorcycles.each do |motorcycle| %>
+   <div class="col-4">
+     <div class="flat-card">
+       <div class="flat-card-content">
+         <div class="flat-card-title">
+           <h4><%= motorcycle.model %></h4>
+         </div>
+         <p><%= motorcycle.year %></p>
 
-        <p>All <%= Motorcycle.count %> motorcycles.</p>
-
-  
+       </div>
+       <div class="flat-card-actions">
+         <%= link_to 'More info', motorcycle_path(motorcycle) %>
+         <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: 'ml-3 text-warning' %>
+         <%= link_to "Remove", motorcycle_path(motorcycle),
+             method: :delete, 
+             data: { confirm: "Are you sure?" },
+             class: 'ml-3 text-danger'
+         %>
+       </div>
+     </div>
+   </div>
+ <% end %>
+</div>
+</div>

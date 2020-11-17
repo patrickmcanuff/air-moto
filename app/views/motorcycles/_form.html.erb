@@ -1,6 +1,12 @@
 <%= simple_form_for(@motorcycle) do |f| %>
     <%= f.input :model %>
+    <%= f.input :brand %>
     <%= f.input :year %>
     <%= f.input :location %>
-    <%= f.submit %>
+    <div class="mt-3">
+    <%= f.submit class: 'btn btn-primary' %>
+    <%= link_to 'Cancel', motorcycles_path, class: 'btn btn-danger ml-2' %>
+  </div>
   <% end %>
+
+
