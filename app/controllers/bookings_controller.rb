@@ -1,8 +1,11 @@
 class BookingsController < ApplicationController
 
   def index
-    @bookings = Booking.all
     #add the logic if user is the current user then display all the bookings
+    # @booking = Booking.find()
+    # if booking.user == current_user
+      @bookings = Booking.all
+    # end
   end
 
   def new
