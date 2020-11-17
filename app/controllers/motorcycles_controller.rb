@@ -8,16 +8,19 @@ class MotorcyclesController < ApplicationController
     def show
         @motorcycle = Motorcycle.find(params[:id])
       end
-    
+
     def edit
-    end
+        @motorcycle = Motorcycle.find(params[:id])
+      end
+    
+    
 
     def new
         @motorcycle = Motorcycle.new
     end
 
     def create
-        @Motorcycle = Motorcycle.new(motorcycle_params)
+        @motorcycle = Motorcycle.new(motorcycle_params)
         if @motorcycle.save
           redirect_to motorcycles_path
         else
