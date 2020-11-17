@@ -46,7 +46,6 @@ class MotorcyclesController < ApplicationController
         )
       end
   end
-end
   private
 
   def motorcycle_params
