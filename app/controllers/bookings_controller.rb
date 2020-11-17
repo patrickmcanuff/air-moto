@@ -1,5 +1,10 @@
 class BookingsController < ApplicationController
 
+  def index
+    @bookings = Booking.all
+    #add the logic if user is the current user then display all the bookings
+  end
+
   def new
     @booking = Booking.new
     @motorcycle = Motorcycle.find(params[:motorcycle_id])
