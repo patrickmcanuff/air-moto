@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
   devise_for :users
-  root to: 'motorcycles#home'
 
   resources :motorcycles
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-
+  resources :bookings
+  
+  root to: 'motorcycles#home'
   get '/users/:id', to: 'users#show', as: :user_show
+  get '/users/:id/show_motorcycle', to: 'users#show_motorcycle', as: :show_motorcycle_user
 end
