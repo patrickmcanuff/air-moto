@@ -1,6 +1,4 @@
-class MotorcyclesController < ApplicationController
-   skip_before_action :authenticate_user!
-  
+class MotorcyclesController < ApplicationController  
     def index
       @motorcycles = Motorcycle.all
     end
@@ -12,8 +10,6 @@ class MotorcyclesController < ApplicationController
     def edit
         @motorcycle = Motorcycle.find(params[:id])
       end
-    
-    
 
     def new
         @motorcycle = Motorcycle.new
@@ -21,11 +17,18 @@ class MotorcyclesController < ApplicationController
 
     def create
         @motorcycle = Motorcycle.new(motorcycle_params)
+        @motorcycle.user = current_user
         if @motorcycle.save
-          redirect_to motorcycles_path
+          redirect_to motorcycle_path(@motorcycle)
         else
           render :new
         end
+    end
+
+    def update
+      motorcycle = Motorcycle.find(params[:id])
+      motorcycle.update(motorcycle_params)
+      redirect_to motorcycle_path(motorcycle)
     end
  
     private
