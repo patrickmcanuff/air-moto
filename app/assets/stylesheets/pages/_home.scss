@@ -56,8 +56,36 @@
   }
 
   h1{
+    font-family: RlFreight, HoeflerText-Black, Times New Roman, serif;
     text-align: center;
   }
   p{
     text-align: center;
+    font-family: RlBasisGrotesque, Avenir, Helvetica Neue, Helvetica, sans-serif;
+    text-size: 16px;
   }
+
+  li{
+    color: #grey;
+    font-size: 16px;
+    text-decoration: none;
+    display: inline-block;
+    height: 100%;
+    padding: 5px;
+  }
+
+  ul{
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+  }
+  
+input {
+  border-radius: 32px !important;
+}
+
+.col {
+  flex: 1 1 0% !important;
+  display: -webkit-flex !important;
+}
