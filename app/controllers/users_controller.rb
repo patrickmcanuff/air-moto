@@ -3,6 +3,6 @@ class UsersController < ApplicationController
   end
 
   def show_motorcycle
-    @motorcycle.where(current_user.id == :id)
+    @motorcycles_user = Motorcycle.where(user: current_user.id)
   end
 end
