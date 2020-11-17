@@ -7,14 +7,11 @@ class BookingsController < ApplicationController
 
   def create
     booking = Booking.new(booking_params)
-    if booking.save
-      redirect_to booking_path(booking)
-    else
-      render :new
-    end
+    booking.save
+    redirect_to bookings_path(booking)
   end
 
   def booking_params
-    # params.require(:booking).permit(:)
+    params.require(:booking).permit(:date_start, :date_end)
   end
 end

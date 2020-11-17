@@ -34,6 +34,12 @@
   <p>Owner: <%= @motorcycle.user.name%></p>
 </div>
 
-<div class="text-center my-5">
-  <%= link_to 'Book', bookings_path, class: "btn btn-primary"%>
-</div>
+<%= simple_form_for(@booking) do |f| %>
+  <%= f.input :date_start %>
+  <%= f.input :date_end %>
+  <%= f.submit %>
+<% end %>
+
+
+
+
