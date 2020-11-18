@@ -1,11 +1,9 @@
 class BookingsController < ApplicationController
+  
+  skip_before_action :authenticate_user!
 
   def index
-    #add the logic if user is the current user then display all the bookings
-    #if the motorcycle is booked by someone else I shouldn't be able to book it for same dates
-    # @booking = Booking.find()
-     @bookings = current_user.bookings
-    # end
+    @bookings = current_user.bookings
   end
 
   def create
@@ -19,6 +17,21 @@ class BookingsController < ApplicationController
       render 'motorcycles/show'
     end
   end
+  
+  def destroy
+    booking = Booking.find(params[:id])
+    if current_user == booking.user
+      booking.destroy
+      redirect_to bookings_path
+    else
+      render(
+        html: "<script>alert('You can't delete this booking because you are not the owner of the booking')</script>".html_safe,
+        layout: 'application'
+      )
+    end
+  end
+  
+  private
 
   def booking_params
     params.require(:booking).permit(:date_start, :date_end)
