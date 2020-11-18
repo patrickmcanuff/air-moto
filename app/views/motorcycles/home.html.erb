@@ -1,10 +1,23 @@
-<div class="container">
-    <h1>Rent a <strong>motorcycle</strong> anywhere <strong>in the world</strong>!</h1>
-    <p><strong>Book unforgettable bikes from trusted hosts around the globe</strong>
-    </p>
-  </div>
 
-<div class="container">
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://specials-images.forbesimg.com/imageserve/5c09af4a31358e5b4338fbfb/960x0.jpg?cropX1=0&cropX2=5184&cropY1=410&cropY2=3175);">
+  <div class="container">
+    <h1>Rend a <strong>motorcycle</strong> anywhere <strong>in the world</strong>!</h1>
+    <p>Book unforgettable bikes from trusted hosts around the globe</p>
+    <div class="form-group row">
+    <div class="col-sm-10">
+      </div>
+      <%= button_to "Search", motorcycles_path, :id => "open-contacts-dialog-btn",
+      :class => "btn btn-outline-success my-2 my-sm-0", :method => :get %>
+  </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div class="hidden">
 <form>
   <div class="row">
     <div class="col">
@@ -26,7 +39,7 @@
 
 
 
-<div class="cards">
+<div class="hidden">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
     Motorcycles 1  
   </div>
@@ -40,4 +53,3 @@
   </div>
 </div>
 </div>
-
