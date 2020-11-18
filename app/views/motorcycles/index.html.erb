@@ -1,32 +1,152 @@
 <div class="container mt-3">
- <h1>All of our motorcycles</h1>
+  <h1>All of our motorcycles</h1>
 </div>
 
- <p>All <%= Motorcycle.count %> motorcycles.</p>
+<p>Choose between <%= Motorcycle.count %> motorcycles near you.</p>
 
 
- <div class="row">
- <% @motorcycles.each do |motorcycle| %>
-   <div class="col-4">
-     <div class="flat-card">
-       <div class="flat-card-content">
-         <div class="flat-card-title">
-           <h4><%= motorcycle.model %></h4>
-         </div>
-         <p><%= motorcycle.year %></p>
+<!--<div class="row">-->
+  <%# @motorcycles.each do |motorcycle| %>
+<!--    <div class="col-4">-->
+<!--      <div class="flat-card">-->
+<!--        <div class="flat-card-content">-->
+<!--          <div class="flat-card-title">-->
+<!--            <h4><%#= motorcycle.brand %></h4><h4><%#= motorcycle.model %></h4>-->
+<!--          </div>-->
+<!--          <p><%#= motorcycle.year %></p>-->
+<!--        </div>-->
+<!--        <div class="flat-card-actions">-->
+          <%#= link_to 'More info', motorcycle_path(motorcycle) %>
+          <%#= link_to 'Edit', edit_motorcycle_path(motorcycle), class: 'ml-3 text-warning' %>
+          <%#= link_to "Remove", motorcycle_path(motorcycle), method: :delete, data: { confirm: "Are you sure?" }, class: 'ml-3 text-danger' %>
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+  <%# end %>
+<!--</div>-->
+<!--</div>-->
 
-       </div>
-       <div class="flat-card-actions">
-         <%= link_to 'More info', motorcycle_path(motorcycle) %>
-         <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: 'ml-3 text-warning' %>
-         <%= link_to "Remove", motorcycle_path(motorcycle),
-             method: :delete, 
-             data: { confirm: "Are you sure?" },
-             class: 'ml-3 text-danger'
-         %>
-       </div>
-     </div>
-   </div>
- <% end %>
-</div>
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666105/air-moto/2019_Honda_CB1000R/2019_Honda_CB1000R_1_ybhirw.jpg)">
+    <%= Motorcycle.find(1).year %>
+    <%= Motorcycle.find(1).brand %>
+    <%= Motorcycle.find(1).model %>
+    <br>
+    <%= Motorcycle.find(1).location %>
+    <br>
+    $<%= Motorcycle.find(1).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666109/air-moto/2019_Yamaha_YZ250/2019_Yamaha_YZ250_1_ud6yut.jpg)">
+    <%= Motorcycle.find(2).year %>
+    <%= Motorcycle.find(2).brand %>
+    <%= Motorcycle.find(2).model %>
+    <br>
+    <%= Motorcycle.find(2).location %>
+    <br>
+    $<%= Motorcycle.find(2).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666100/air-moto/2015_KTM_1290_Super_Duke_R/2015_KTM_1290_Super_Duke_R_1_mzci4x.jpg)">
+    <%= Motorcycle.find(3).year %>
+    <%= Motorcycle.find(3).brand %>
+    <%= Motorcycle.find(3).model %>
+    <br>
+    <%= Motorcycle.find(3).location %>
+    <br>
+    $<%= Motorcycle.find(3).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666105/air-moto/2014_BMW_F700GS/2014_BMW_F700GS_1_umz8qn.jpg)">
+    <%= Motorcycle.find(4).year %>
+    <%= Motorcycle.find(4).brand %>
+    <%= Motorcycle.find(4).model %>
+    <br>
+    <%= Motorcycle.find(4).location %>
+    <br>
+    $<%= Motorcycle.find(4).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666107/air-moto/2011_Harley_Davidson_Electra_Glide/2011_Harley_Davidson_Electra_Glide_1_khunpa.jpg)">
+    <%= Motorcycle.find(5).year %>
+    <%= Motorcycle.find(5).brand %>
+    <%= Motorcycle.find(5).model %>
+    <br>
+    <%= Motorcycle.find(5).location %>
+    <br>
+    $<%= Motorcycle.find(5).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666102/air-moto/2017_BMW_S1000R/2017_BMW_S1000R_1_gcbepw.jpg)">
+    <%= Motorcycle.find(6).year %>
+    <%= Motorcycle.find(6).brand %>
+    <%= Motorcycle.find(6).model %>
+    <br>
+    <%= Motorcycle.find(6).location %>
+    <br>
+    $<%= Motorcycle.find(6).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666105/air-moto/2014_Moto_Guzzi_V7_II_Stone/2014_Moto_Guzzi_V7_II_Stone_1_jepsqh.jpg)">
+    <%= Motorcycle.find(10).year %>
+    <%= Motorcycle.find(10).brand %>
+    <%= Motorcycle.find(10).model %>
+    <br>
+    <%= Motorcycle.find(10).location %>
+    <br>
+    $<%= Motorcycle.find(10).price %>/day
+    <br>
+    $<%= Motorcycle.find(10).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666109/air-moto/2019_Husqvarna_Vitpilen_701/2019_Husqvarna_Vitpilen_701_1_jdab7w.png)">
+    <%= Motorcycle.find(11).year %>
+    <%= Motorcycle.find(11).brand %>
+    <%= Motorcycle.find(11).model %>
+    <br>
+    <%= Motorcycle.find(11).location %>
+    <br>
+    $<%= Motorcycle.find(11).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666105/air-moto/2017_KTM_250_EXC-F/2017_KTM_250_EXC-F_1_dfcudh.jpg)">
+    <%= Motorcycle.find(12).year %>
+    <%= Motorcycle.find(12).brand %>
+    <%= Motorcycle.find(12).model %>
+    <br>
+    <%= Motorcycle.find(12).location %>
+    <br>
+    $<%= Motorcycle.find(12).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666100/air-moto/2003_Yamaha_YZF1000R/2003_Yamaha_YZF1000R_1_jtybaz.jpg)">
+    <%= Motorcycle.find(7).year %>
+    <%= Motorcycle.find(7).brand %>
+    <%= Motorcycle.find(7).model %>
+    <br>
+    <%= Motorcycle.find(7).location %>
+    <br>
+    $<%= Motorcycle.find(7).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg)">
+    <%= Motorcycle.find(8).year %>
+    <%= Motorcycle.find(8).brand %>
+    <%= Motorcycle.find(8).model %>
+    <br>
+    <%= Motorcycle.find(8).location %>
+    <br>
+    $<%= Motorcycle.find(8).price %>/day
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666103/air-moto/2012_Triumph_Scrambler/2012_Triumph_Scrambler_1_djjfrs.jpg)">
+    <%= Motorcycle.find(9).year %>
+    <%= Motorcycle.find(9).brand %>
+    <%= Motorcycle.find(9).model %>
+    <br>
+    <%= Motorcycle.find(9).location %>
+    <br>
+    $<%= Motorcycle.find(9).price %>/day
+  </div>
+  <br>
 </div>
