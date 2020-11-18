@@ -34,7 +34,7 @@
   <p>Owner: <%= @motorcycle.user.name%></p>
 </div>
 
-<%= simple_form_for(@booking) do |f| %>
+<%= simple_form_for([@motorcycle, @booking]) do |f| %>
   <%= f.input :date_start %>
   <%= f.input :date_end %>
   <%= f.submit %>

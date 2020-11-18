@@ -1,0 +1,13 @@
+<p>Your bookings</p>
+
+<ul>
+  <% @bookings.each do |booking| %>
+    <li>
+      <%= booking.motorcycle.brand %>
+      <%= booking.motorcycle.model %>
+      <%= booking.motorcycle.year %>
+      <%= booking.motorcycle.location %>
+      <%= booking.motorcycle.user.name %>
+    </li>
+  <% end %>
+</ul>
