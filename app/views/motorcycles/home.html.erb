@@ -1,19 +1,50 @@
-
-
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://specials-images.forbesimg.com/imageserve/5c09af4a31358e5b4338fbfb/960x0.jpg?cropX1=0&cropX2=5184&cropY1=410&cropY2=3175);">
   <div class="container">
-    <h1>Rend a <strong>motorcycle</strong> anywhere <strong>in the world</strong>!</h1>
+    <h1>Rent a <strong>motorcycle</strong> anywhere <strong>in the world</strong>!</h1>
     <p>Book unforgettable bikes from trusted hosts around the globe</p>
     <div class="form-group row">
     <div class="col-sm-10">
-      </div>
-      <%= button_to "Search", motorcycles_path, :id => "open-contacts-dialog-btn",
-      :class => "btn btn-outline-success my-2 my-sm-0", :method => :get %>
+  <div class="container">
+<form>
+  <div class="row">
+    <div class="col">
+      <input type="text" class="form-control" placeholder="Where">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control" placeholder="From">
+    </div>
+    <div class="col">
+    <input type="text" class="form-control" placeholder="Until">
   </div>
+  <div class="form-group row">
+
+  <div class="col-sm-10">
+  <%= button_to "Search", motorcycles_path, :id => "open-contacts-dialog-btn",
+  :class => "btn btn-outline-success my-2 my-sm-0", :method => :get %>
     </div>
   </div>
 </div>
+</form>
 
+
+<br>
+<br>
+
+<div class="hidden">
+<div class="cards">
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
+    Motorcycles 1  
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://electrek.co/wp-content/uploads/sites/3/2019/07/zero-fxs-header.jpg?quality=82&strip=all&w=1600)">
+    Motorcycles 2
+  </div>
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.thecoolist.com/wp-content/uploads/2017/06/Harley-Davidson-Street-750-commuter-motorcycle.jpg-960x640.jpg)">
+    Motorcycles 3
+  </div>
+</div>
+</div>
 
 
 
