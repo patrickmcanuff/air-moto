@@ -1,15 +1,13 @@
 <h1>Your motorcycle post :</h1>
 
-<% @motorcycles_user.each do |motorcycle| %>
-  <div class="cards">
+<div class="cards">
+  <% @motorcycles_user.each do |motorcycle| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
-      <ul>
-        <li><%= motorcycle.brand %></li>
-        <li><%= motorcycle.model %></li>
-        <li><%= motorcycle.year %></li>
-        <li><%= motorcycle.location %></li>
-        <%= link_to 'Delete this post', motorcycle_path(motorcycle.id), method: :delete %>
-      </ul>
+      <%= motorcycle.year %></li><br>
+      <%= motorcycle.brand %></li><br>
+      <%= motorcycle.model %></li><br>
+      <%= motorcycle.location %></li><br>
+      <%= link_to 'Delete this post', motorcycle_path(motorcycle.id), method: :delete, class: 'moto-info' %>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>
