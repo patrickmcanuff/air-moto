@@ -28,8 +28,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9738880-e9d3-4493-9fc3-d3c330d0940e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/air-moto.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/air-moto.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Gemfile" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +200,7 @@
       <workItem from="1605653575189" duration="1452000" />
       <workItem from="1605656201938" duration="2232000" />
       <workItem from="1605659375126" duration="4000" />
+      <workItem from="1605659652609" duration="546000" />
     </task>
     <servers />
   </component>
@@ -221,10 +224,18 @@
       <screen x="52" y="23" width="1868" height="1057" />
     </state>
     <state x="745" y="351" key="#com.intellij.fileTypes.FileTypeChooser/52.23.1868.1057@52.23.1868.1057" timestamp="1605659341267" />
+    <state x="152" y="123" width="1668" height="857" key="DiffContextDialog" timestamp="1605659822367">
+      <screen x="52" y="23" width="1868" height="1057" />
+    </state>
+    <state x="152" y="123" width="1668" height="857" key="DiffContextDialog/52.23.1868.1057@52.23.1868.1057" timestamp="1605659822367" />
     <state x="221" y="89" key="SettingsEditor" timestamp="1605638828994">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state x="221" y="89" key="SettingsEditor/0.0.1440.900@0.0.1440.900" timestamp="1605638828994" />
+    <state x="839" y="465" key="VCS.ChangelistChooser" timestamp="1605659698011">
+      <screen x="52" y="23" width="1868" height="1057" />
+    </state>
+    <state x="839" y="465" key="VCS.ChangelistChooser/52.23.1868.1057@52.23.1868.1057" timestamp="1605659698011" />
     <state x="549" y="381" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605645791285">
       <screen x="52" y="23" width="1388" height="877" />
     </state>
