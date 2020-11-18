@@ -1,11 +1,17 @@
-<h1>users page</h1>
+<h1>Your users profile</h1>
+<div class="main-profil-container d-flex">
+  <div class='profil-info-container m-2 p-2 w-50 border border-success'>
+    <p>Email: <%= current_user.email %></p>
+    <p>Name: <%= current_user.name %></p>
+    <p>Driver license number: <%= current_user.drivers_license_number %></p>
+    <p>Address :<%= current_user.address %></p>
+  </div>
+  <div class='profil-info-container m-2 p-2 w-50 border border-success'>
+    <p><%= link_to 'Add motorcycle', new_motorcycle_path, class: 'btn btn-success' %></p>
+    <p><%= link_to 'Edit profile', edit_user_registration_path, class: 'btn btn-success'  %></p>
+    <p><%= link_to 'See my motorcycle post', show_motorcycle_user_path(current_user.id), class: 'btn btn-success'  %></p>
+  </div>
+</div>
 
-<p><%= current_user.email %></p>
-<p><%= current_user.name %></p>
-<p><%= current_user.drivers_license_number %></p>
-<p><%= current_user.address %></p>
 
-<p><%= link_to 'Add motorcycle', new_motorcycle_path %></p>
-<p><%= link_to 'Edit profile', edit_user_registration_path %></p>
-<p><%= link_to 'See my motorcycle post', show_motorcycle_user_path(current_user.id) %></p>
 
