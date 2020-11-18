@@ -15,7 +15,7 @@ class BookingsController < ApplicationController
       render 'motorcycles/show'
     end
   end
-  
+
   def destroy
     booking = Booking.find(params[:id])
     if current_user == booking.user
@@ -28,7 +28,7 @@ class BookingsController < ApplicationController
       )
     end
   end
-  
+
   private
 
   def booking_params
