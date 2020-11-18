@@ -1,14 +1,23 @@
 class BookingsController < ApplicationController
 
-  def new
-    @booking = Booking.new
-    @motorcycle = Motorcycle.find(params[:motorcycle_id])
+  def index
+    #add the logic if user is the current user then display all the bookings
+    #if the motorcycle is booked by someone else I shouldn't be able to book it for same dates
+    # @booking = Booking.find()
+     @bookings = current_user.bookings
+    # end
   end
 
   def create
-    booking = Booking.new(booking_params)
-    booking.save
-    redirect_to bookings_path(booking)
+    @motorcycle = Motorcycle.find(params[:motorcycle_id])
+    @booking = Booking.new(booking_params)
+    @booking.motorcycle = @motorcycle
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render 'motorcycles/show'
+    end
   end
 
   def booking_params
