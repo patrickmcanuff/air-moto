@@ -1,4 +1,6 @@
 class MotorcyclesController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:home, :show, :index]
+  
   def index
     @motorcycles = Motorcycle.all
   end
