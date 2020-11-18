@@ -1,6 +1,4 @@
 class BookingsController < ApplicationController
-  
-  skip_before_action :authenticate_user!
 
   def index
     @bookings = current_user.bookings
