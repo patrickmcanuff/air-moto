@@ -1,19 +1,21 @@
 class BookingsController < ApplicationController
-  def new
-    @booking = Booking.new
-    @motorcycle = Motorcycle.find(params[:motorcycle_id])
+
+  def index
+    @bookings = current_user.bookings
   end
 
   def create
-    booking = Booking.new(booking_params)
-    booking.save
-    redirect_to bookings_path(booking)
+    @motorcycle = Motorcycle.find(params[:motorcycle_id])
+    @booking = Booking.new(booking_params)
+    @booking.motorcycle = @motorcycle
+    @booking.user = current_user
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render 'motorcycles/show'
+    end
   end
-
-  def booking_params
-    params.require(:booking).permit(:date_start, :date_end)
-  end
-
+  
   def destroy
     booking = Booking.find(params[:id])
     if current_user == booking.user
@@ -25,5 +27,11 @@ class BookingsController < ApplicationController
         layout: 'application'
       )
     end
+  end
+  
+  private
+
+  def booking_params
+    params.require(:booking).permit(:date_start, :date_end)
   end
 end
