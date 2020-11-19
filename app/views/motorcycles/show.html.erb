@@ -37,15 +37,6 @@
 
 </div>
 
-<% if current_user != @motorcycle.user %>
-  <%= simple_form_for([@motorcycle, @booking]) do |f| %>
-    <%= f.input :date_start %>
-    <%= f.input :date_end %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-
-
 
 
 
