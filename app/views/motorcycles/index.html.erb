@@ -1,8 +1,76 @@
-<div class="container mt-3">
+
+
+
+<div>
   <h1>All of our motorcycles</h1>
 </div>
 
 <p>Choose between <%= Motorcycle.count %> motorcycles.</p>
+
+<% @motorcycles.each do |motorcycle| %>
+  
+  <% if motorcycle.photos.empty? %>
+  <%= cl_image_tag "https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg",  height: 300, width: 400 %>
+  <% else %>
+    <%= cl_image_path motorcycle.photos[0].key , height: 300, width: 400, crop: :fill%>
+  <% end %>
+<% end %>
+
+
+
+
+
+
+
+
+<p id="notice"><%= notice %></p>
+
+<h1>Moorcycles</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @motorcycles.each do |motorcycle| %>
+      <tr>
+        <td><%= motorcycle.brand %></td>
+        <td><%= motorcycle.model %></td>
+        <td><%= motorcycle.year %></td>
+        <td><%= motorcycle.location %></td>
+        <td><%= motorcycle.price %></td>
+
+        <td><%= link_to 'Show', motorcycle %></td>
+        <td><%= link_to 'Edit', edit_motorcycle_path(motorcycle) %></td>
+        <td><%= link_to 'Destroy', motorcycle, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if motorcycle.photos.empty? %>
+       <td> <%= cl_image_tag "https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg",  height: 300, width: 400 %></td>
+        <% else %>
+       <td> <%= cl_image_tag motorcycle.photos[0].key , height: 300, width: 400, crop: :fill%></td>
+      <% end %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Motorcycle', new_motorcycle_path %>
+
+
+
+
+
+
+
+<br>
+
+
 
 
 <div class="cards">
@@ -126,13 +194,3 @@
 <!--    $<%#= Motorcycle.find(8).price %>/day-->
     <%#= link_to 'More info', motorcycle_path(Motorcycle.find(8)), class: "moto-info" %>
 <!--  </div>-->
-
-
-<% @motorcycles.each do |motorcycle| %>
-  <% if motorcycle.photos.empty? %>
-    <img src="https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg" />
-    <%= image_tag "https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg",  height: 300, width: 400, crop: :fill %>
-    <% else %>
-    <%= cl_image_tag motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>
-  <% end %>
-<% end %>
