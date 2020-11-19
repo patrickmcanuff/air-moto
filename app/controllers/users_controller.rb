@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def show
-    @booking = Booking.where(user: current_user.id)
+    @booking_pending = Booking.where(user: current_user.id, booked: 'pending')
+    @booking_accepted = Booking.where(user: current_user.id, booked: 'accepted')
   end
 
   def show_motorcycle
@@ -12,6 +13,7 @@ class UsersController < ApplicationController
     if params[:decision] == 'accepted'
       booking_to_change.booked = 'accepted'
       booking_to_change.save
+      redirect_to user_show_path(current_user)
     elsif params[:decision] == 'refused'
       booking_to_change.booked = 'refused'
       booking_to_change.save
