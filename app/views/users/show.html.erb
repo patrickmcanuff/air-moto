@@ -13,5 +13,45 @@
   </div>
 </div>
 
+<% if @booking_pending.count == 0 %>
+  <h1>You have no pending booking for your motorcycle</h1>
+<% else %>
+  <h1>Your pending booking</h1>
+<% end %>
+<div class="main-profil-container border">
+  <div class="cards">
+  <% @booking_pending.each do |booking| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
+      <%= booking.motorcycle.year %><br>
+      <%= booking.motorcycle.brand %><br>
+      <%= booking.motorcycle.model %><br>
+      <%= booking.motorcycle.location %><br>
+      <%= booking.date_start.strftime("From: %F") %><br>
+      <%= booking.date_end.strftime("To: %F") %><br>
+      <%= link_to 'Accept', booked_decision_path(current_user, :decision => 'accepted', :booking_id => booking.id),method: :post, class: "btn btn-sm btn-success" %>
+      <%= link_to 'Refuse', booked_decision_path(current_user, :decision => 'refused', :booking_id => booking.id),method: :post, class: "btn btn-sm btn-danger" %>
+    </div>
+  <% end %>
+</div>
+<% if @booking_pending.count == 0 %>
+  <h1>Your accepted booking</h1>
+<% else %>
+  <h1>You have no accepted booking</h1>
+<% end %>
+
+<div class="main-profil-container border">
+  <div class="cards">
+  <% @booking_accepted.each do |booking| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
+      <%= booking.motorcycle.year %><br>
+      <%= booking.motorcycle.brand %><br>
+      <%= booking.motorcycle.model %><br>
+      <%= booking.motorcycle.location %><br>
+      <%= booking.date_start.strftime("From: %F") %><br>
+      <%= booking.date_end.strftime("To: %F") %><br>
+      <%= booking.booked %><br>
+    </div>
+  <% end %>
+</div>
 
 
