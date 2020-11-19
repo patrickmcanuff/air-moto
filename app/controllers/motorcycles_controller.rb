@@ -4,6 +4,11 @@ class MotorcyclesController < ApplicationController
   def index
     if params[:query].present?
       @motorcycles = Motorcycle.search_by_location(params[:query])
+      # store start and end date params from form
+      # filter moto from array based on availability from start and end date
+      # availability based on Motorcycle.bookings if empty then no bookings
+      # @moto.where for start date (ex greater than or less than)
+      @motorcycles = Motorcycle.joins(Booking).where(bookings: { start_date: , end_date:  })
     else
       @motorcycles = Motorcycle.all
     end

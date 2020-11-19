@@ -14,4 +14,10 @@ class Motorcycle < ApplicationRecord
                   using: {
                       tsearch: { prefix: true }
                   }
+
+  pg_search_scope :search_by_dates,
+                  against: [ : ],
+                  using: {
+                      tsearch: { prefix: true }
+                  }
 end
