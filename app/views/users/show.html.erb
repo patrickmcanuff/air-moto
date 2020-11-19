@@ -24,6 +24,7 @@
       <%= booking.date_start %><br>
       <%= booking.date_end %><br>
       <%= link_to 'Accept', booked_decision_path(current_user, :decision => 'accepted', :booking_id => booking.id),method: :post, class: "btn btn-sm btn-success" %>
+      <%= link_to 'Refuse', booked_decision_path(current_user, :decision => 'refused', :booking_id => booking.id),method: :post, class: "btn btn-sm btn-danger" %>
     </div>
   <% end %>
 </div>

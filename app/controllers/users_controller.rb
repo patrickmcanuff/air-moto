@@ -8,12 +8,13 @@ class UsersController < ApplicationController
   end
 
   def booked_decision
+    booking_to_change = Booking.find(params[:booking_id])
     if params[:decision] == 'accepted'
-      booking_to_change = Booking.where(params[:booking_id])
       booking_to_change.booked = 'accepted'
+      booking_to_change.save
     elsif params[:decision] == 'refused'
-      booking_to_change = Booking.where(params[:booking_id])
       booking_to_change.booked = 'refused'
+      booking_to_change.save
     end
   end
 end
