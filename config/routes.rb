@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   root to: 'motorcycles#home'
   get '/users/:id', to: 'users#show', as: :user_show
   get '/users/:id/show_motorcycle', to: 'users#show_motorcycle', as: :show_motorcycle_user
+  post '/users/:id', to: 'users#booked_decision', as: :booked_decision
 end
