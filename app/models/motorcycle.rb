@@ -9,15 +9,17 @@ class Motorcycle < ApplicationRecord
   validates :year, presence: true
 
   include PgSearch::Model
+  # multisearchable (
+  #   against: [:location],
+  #     additional_attributes: -> (motorcycle) {{booking_id: }}
+  # )
   pg_search_scope :search_by_location,
                   against: [ :location ],
-                  using: {
-                      tsearch: { prefix: true }
-                  }
-
-  pg_search_scope :search_by_dates,
-                  against: [ : ],
+                  associated_against: {
+                      bookings: [:date_start, :date_end]
+                  },
                   using: {
                       tsearch: { prefix: true }
                   }
 end
+
