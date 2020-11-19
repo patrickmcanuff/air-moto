@@ -2,7 +2,11 @@ class MotorcyclesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :show, :index]
 
   def index
-    @motorcycles = Motorcycle.all
+    if params[:query].present?
+      @motorcycles = Motorcycle.search_by_location(params[:query])
+    else
+      @motorcycles = Motorcycle.all
+    end
   end
 
   def edit

@@ -3,8 +3,13 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
-# Added
+# Search
+gem 'pg_search', '~> 2.3.0'
+
+# User accounts
 gem 'devise'
+
+# Seeding
 gem 'faker'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
