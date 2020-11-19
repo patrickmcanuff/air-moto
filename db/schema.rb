@@ -57,7 +57,6 @@ ActiveRecord::Schema.define(version: 2020_11_19_155230) do
     t.datetime "updated_at", precision: 6, null: false
     t.integer "year"
     t.integer "price"
-    t.string "photo"
     t.index ["user_id"], name: "index_motorcycles_on_user_id"
   end
 
