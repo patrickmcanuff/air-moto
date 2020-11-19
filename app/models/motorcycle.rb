@@ -7,6 +7,8 @@ class Motorcycle < ApplicationRecord
   validates :brand, presence: true
   validates :location, presence: true
   validates :year, presence: true
+  validates :photos, presence: true
+
 
   include PgSearch::Model
   pg_search_scope :search_by_location,
