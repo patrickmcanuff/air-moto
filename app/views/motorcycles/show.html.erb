@@ -32,16 +32,10 @@
   <p>Year: <%= @motorcycle.year %></p>
   <p>Location: <%= @motorcycle.location %></p>
   <p>Owner: <%= @motorcycle.user.name%></p>
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>')">
+  <tr>
+
 </div>
-
-<% if current_user != @motorcycle.user %>
-  <%= simple_form_for([@motorcycle, @booking]) do |f| %>
-    <%= f.input :date_start %>
-    <%= f.input :date_end %>
-    <%= f.submit %>
-  <% end %>
-<% end %>
-
 
 
 
