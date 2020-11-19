@@ -3,10 +3,10 @@
 <div class="cards">
   <% @motorcycles_user.each do |motorcycle| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
-      <%= motorcycle.year %></li><br>
-      <%= motorcycle.brand %></li><br>
-      <%= motorcycle.model %></li><br>
-      <%= motorcycle.location %></li><br>
+      <%= motorcycle.year %><br>
+      <%= motorcycle.brand %><br>
+      <%= motorcycle.model %><br>
+      <%= motorcycle.location %><br>
       <%= link_to 'Delete this post', motorcycle_path(motorcycle.id), method: :delete, class: 'moto-info' %>
     </div>
   <% end %>
