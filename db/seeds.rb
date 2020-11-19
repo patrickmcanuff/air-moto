@@ -25,17 +25,22 @@ johnwick = User.create(
     name: "John Wick",
     address: "1 Wall Street Court, New York",
     drivers_license_number: Faker::DrivingLicence.british_driving_licence,
+    avatar: 'https://res.cloudinary.com/dmwnfqoel/image/upload/v1605824777/user_1_g89cu0.png'
     )
 
 15.times do
-  User.create(
+  user = User.new(
       # add email and password
       email: Faker::Internet.email,
       password: Faker::Internet.password,
       name: Faker::Name.name,
       address: Faker::Address.full_address,
       drivers_license_number: Faker::DrivingLicence.british_driving_licence,
+      avatar: 'https://res.cloudinary.com/dmwnfqoel/image/upload/v1605824777/user_1_g89cu0.png'
       )
+  #fetch user profile photo from cloudinary
+  #attach photo to user photo.user.attach
+  user.save
 end
 
 
