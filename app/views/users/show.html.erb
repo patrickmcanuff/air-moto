@@ -12,6 +12,22 @@
     <p><%= link_to 'See my motorcycle post', show_motorcycle_user_path(current_user.id), class: 'btn btn-success'  %></p>
   </div>
 </div>
+<h1>Your pending booking</h1>
+<div class="main-profil-container border">
+  <div class="cards">
+  <% @booking.each do |booking| %>
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://cdn.shopify.com/s/files/1/0742/8739/products/20200114172057_1024x1024.jpg?v=1582479270">
+      <%= booking.motorcycle.year %><br>
+      <%= booking.motorcycle.brand %><br>
+      <%= booking.motorcycle.model %><br>
+      <%= booking.motorcycle.location %><br>
+      <%= booking.date_start %><br>
+      <%= booking.date_end %><br>
+      <%= link_to 'Accept', booked_decision_path(current_user, :decision => 'accepted', :booking_id => booking.id),method: :post, class: "btn btn-sm btn-success" %>
+    </div>
+  <% end %>
+</div>
+</div>
 
 
 
