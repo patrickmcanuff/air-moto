@@ -50,6 +50,6 @@ class MotorcyclesController < ApplicationController
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:model, :year, :location, :brand)
+    params.require(:motorcycle).permit(:model, :year, :location, :brand, photos: [])
   end
 end

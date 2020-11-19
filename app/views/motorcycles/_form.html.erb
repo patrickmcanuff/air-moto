@@ -5,6 +5,7 @@
     <%= f.input :location %>
     <%= f.input :price %>
     <p>*Price is per day</p>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     <div class="mt-3">
     <%= f.submit class: 'btn btn-primary' %>
     <%= link_to 'Cancel', motorcycles_path, class: 'btn btn-danger ml-2' %>
