@@ -128,3 +128,11 @@
 <!--  </div>-->
 
 
+<% @motorcycles.each do |motorcycle| %>
+  <% if motorcycle.photos.empty? %>
+    <img src="https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg" />
+    <%= image_tag "https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg",  height: 300, width: 400, crop: :fill %>
+    <% else %>
+    <%= cl_image_tag motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>
+  <% end %>
+<% end %>

@@ -59,3 +59,9 @@ Booking.create(
     date_start: Time.new(2021, 1, 2),
     date_end: Time.new(2021, 1, 14),
 )
+
+
+file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
+motorcycle = Motorcycle.new(year: "1987", brand: "KTM", model: "250 EXC-F", location: "Chiang Mai, Thailand", user: User.fifth, price: 125)
+motorcycle.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+motorcycle.save # this will upload the file we just downloaded to CL and attach it to the new article
