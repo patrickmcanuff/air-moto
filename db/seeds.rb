@@ -59,4 +59,3 @@ Booking.create(
     date_start: Time.new(2021, 1, 2),
     date_end: Time.new(2021, 1, 14),
 )
-

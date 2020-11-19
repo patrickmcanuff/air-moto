@@ -2,57 +2,8 @@
   <h1>All of our motorcycles</h1>
 </div>
 
-<<<<<<< HEAD
- <p>All <%= Motorcycle.count %> motorcycles.</p>
-
-
- <div class="row">
- <% @motorcycles.each do |motorcycle| %>
-   <div class="col-4">
-     <div class="flat-card">
-       <div class="flat-card-content">
-         <div class="flat-card-title">
-           <h4><%= motorcycle.model %></h4>
-         </div>
-         <p><%= motorcycle.year %></p>
-
-       </div>
-       <div class="flat-card-actions">
-         <%= link_to 'More info', motorcycle_path(motorcycle) %>
-         <%= link_to 'Edit', edit_motorcycle_path(motorcycle), class: 'ml-3 text-warning' %>
-         <%= link_to "Remove", motorcycle_path(motorcycle),
-             method: :delete, 
-             data: { confirm: "Are you sure?" },
-             class: 'ml-3 text-danger'
-         %>
-       </div>
-     </div>
-   </div>
- <% end %>
-</div>
-=======
 <p>Choose between <%= Motorcycle.count %> motorcycles.</p>
 
-<!--<div class="row">-->
-  <%# @motorcycles.each do |motorcycle| %>
-<!--    <div class="col-4">-->
-<!--      <div class="flat-card">-->
-<!--        <div class="flat-card-content">-->
-<!--          <div class="flat-card-title">-->
-<!--            <h4><%#= motorcycle.brand %></h4><h4><%#= motorcycle.model %></h4>-->
-<!--          </div>-->
-<!--          <p><%#= motorcycle.year %></p>-->
-<!--        </div>-->
-<!--        <div class="flat-card-actions">-->
-          <%#= link_to 'More info', motorcycle_path(motorcycle) %>
-          <%#= link_to 'Edit', edit_motorcycle_path(motorcycle), class: 'ml-3 text-warning' %>
-          <%#= link_to "Remove", motorcycle_path(motorcycle), method: :delete, data: { confirm: "Are you sure?" }, class: 'ml-3 text-danger' %>
-<!--        </div>-->
-<!--      </div>-->
-<!--    </div>-->
-  <%# end %>
-<!--</div>-->
-<!--</div>-->
 
 <div class="cards">
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666105/air-moto/2019_Honda_CB1000R/2019_Honda_CB1000R_1_ybhirw.jpg)">
@@ -170,22 +121,10 @@
     <%#= Motorcycle.find(8).brand %>
     <%#= Motorcycle.find(8).model %>
 <!--    <br>-->
-    <%#= Motorcycle.find(8).location %>
+    <%#= Motorcycle.find(8).location %>p
 <!--    <br>-->
 <!--    $<%#= Motorcycle.find(8).price %>/day-->
     <%#= link_to 'More info', motorcycle_path(Motorcycle.find(8)), class: "moto-info" %>
 <!--  </div>-->
 
-<!--  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://res.cloudinary.com/dwxhfawho/image/upload/v1605666103/air-moto/2012_Triumph_Scrambler/2012_Triumph_Scrambler_1_djjfrs.jpg)">-->
-    <%#= Motorcycle.find(9).year %>
-    <%#= Motorcycle.find(9).brand %>
-    <%#= Motorcycle.find(9).model %>
-<!--    <br>-->
-    <%#= Motorcycle.find(9).location %>
-<!--    <br>-->
-<!--    $<%#= Motorcycle.find(9).price %>/day-->
-    <%#= link_to 'More info', motorcycle_path(Motorcycle.find(9)), class: "moto-info" %>
-<!--  </div>-->
-  <br>
->>>>>>> master
-</div>
+
