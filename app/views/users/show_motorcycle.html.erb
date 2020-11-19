@@ -7,7 +7,7 @@
       <%= motorcycle.brand %><br>
       <%= motorcycle.model %><br>
       <%= motorcycle.location %><br>
-      <%= link_to 'Delete this post', motorcycle_path(motorcycle.id), method: :delete, class: 'moto-info' %>
+      <%= link_to 'Delete this post', motorcycle_path(motorcycle.id), method: :delete, :data => {:confirm => 'Are you sure? '}, class: 'moto-info' %>
     </div>
   <% end %>
 </div>
