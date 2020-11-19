@@ -1,9 +1,24 @@
-
-
-
-<div>
+<div class="container mt-3">
   <h1>All of our motorcycles</h1>
 </div>
 
 <p>Choose between <%= Motorcycle.count %> motorcycles.</p>
+
+<div class="row">
+  <% @motorcycles.each do |motorcycle| %>
+    <div class="col-4">
+      <div class="flat-card">
+        <div class="flat-card-content">
+          <div class="flat-card-title">
+            <h4><%= motorcycle.brand %></h4><h4><%= motorcycle.model %></h4>
+          </div>
+          <p><%= motorcycle.year %></p>
+        </div>
+        <div class="flat-card-actions">
+          <%= link_to 'More info', motorcycle_path(motorcycle) %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 </div>
