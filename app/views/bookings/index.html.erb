@@ -1,14 +1,24 @@
-<h1>Your bookings</h1>
+<h1 class="mb-5">Your bookings</h1>
 
-<ul>
-  <% @bookings.each do |booking| %>
-    <li>
-      <%= booking.motorcycle.brand %>
-      <%= booking.motorcycle.model %>
-      <%= booking.motorcycle.year %>
-      <%= booking.motorcycle.location %>
-      <%= booking.motorcycle.user.name %>
-    </li>
-    <%= link_to 'Delete this booking', booking_path(booking), method: :delete %>
-  <% end %>
-</ul>
+<div class="container mt-3">
+  <div class="row">
+    <% @bookings.each do |booking| %>
+      <div class="col-4">
+        <div class="booking-card pl-4 pt-4">
+          <div>
+            <%= booking.motorcycle.brand %>
+            <%= booking.motorcycle.model %>
+            <%= booking.motorcycle.year %>
+          </div>
+          <div>
+            <%= booking.motorcycle.location %>
+          </div>
+          <div>
+            <%= booking.motorcycle.user.name %>
+          </div>
+            <%= link_to 'Delete this booking', booking_path(booking), method: :delete, class: "booking-delete-link pl-4"%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
