@@ -13,7 +13,11 @@
   </div>
 </div>
 
-<h1>Your pending booking</h1>
+<% if @booking_pending.count == 0 %>
+  <h1>You have no pending booking for your motorcycle</h1>
+<% else %>
+  <h1>Your pending booking</h1>
+<% end %>
 <div class="main-profil-container border">
   <div class="cards">
   <% @booking_pending.each do |booking| %>
@@ -29,8 +33,12 @@
     </div>
   <% end %>
 </div>
+<% if @booking_pending.count == 0 %>
+  <h1>Your accepted booking</h1>
+<% else %>
+  <h1>You have no accepted booking</h1>
+<% end %>
 
-<h1>Your accepted booking</h1>
 <div class="main-profil-container border">
   <div class="cards">
   <% @booking_accepted.each do |booking| %>
