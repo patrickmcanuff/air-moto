@@ -27,7 +27,7 @@
 
       <li class="nav-item dropdown">
         <% if user_signed_in? && current_user.avatar.present? %>
-          <%= cl_image_tag current_user.avatar, crop: :fill, class: "avatar" %>
+          <%= cl_image_tag current_user.avatar, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"}%>
         <% else %>
           <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"/>
         <% end %>
