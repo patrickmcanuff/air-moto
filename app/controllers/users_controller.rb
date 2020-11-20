@@ -18,6 +18,7 @@ class UsersController < ApplicationController
     elsif params[:decision] == 'refused'
       booking_to_change.booked = 'refused'
       booking_to_change.save
+      redirect_to user_show_path(current_user)
     end
   end
 
