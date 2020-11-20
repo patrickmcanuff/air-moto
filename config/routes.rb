@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/users/:id', to: 'users#show', as: :user_show
   get '/users/:id/show_motorcycle', to: 'users#show_motorcycle', as: :show_motorcycle_user
   post '/users/:id', to: 'users#booked_decision', as: :booked_decision
+  get '/live_user_booking', to: 'motorcycles#live_user_booking', as: :live_user_booking
+  
 end
