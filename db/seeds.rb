@@ -20,16 +20,16 @@ puts "Destroying users..."
 User.destroy_all
 
 puts "Creating John Wick..."
-file = URI.open('https://avatarfiles.alphacoders.com/224/thumb-224371.jpg')
+file = URI.open('https://res.cloudinary.com/dwxhfawho/image/upload/v1605905157/air-moto/jwick_hiujxw.jpg')
 johnwick = User.new(
     email: "johnwick@gmail.com",
     password: "12345678",
     name: "John Wick",
     address: "1 Wall Street Court, New York",
     drivers_license_number: Faker::DrivingLicence.british_driving_licence,
-    avatar: "https://avatarfiles.alphacoders.com/224/thumb-224371.jpg"
+    avatar: "https://res.cloudinary.com/dwxhfawho/image/upload/v1605905157/air-moto/jwick_hiujxw.jpg"
     )
-    johnwick.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    # johnwick.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     johnwick.save
 
 puts "Creating users..."
@@ -44,7 +44,7 @@ file = URI.open("https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960
       drivers_license_number: Faker::DrivingLicence.british_driving_licence,
       avatar: "https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"
       )
-    user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    # user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     user.save
   #fetch user profile photo from cloudinary
   #attach photo to user photo.user.attach
