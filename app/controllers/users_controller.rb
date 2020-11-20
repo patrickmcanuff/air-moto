@@ -19,4 +19,8 @@ class UsersController < ApplicationController
       booking_to_change.save
     end
   end
+
+  def user_params
+    params.require(:user).permit(:name, :drivers_license_number, :address, :avatar)
+  end
 end

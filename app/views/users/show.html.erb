@@ -35,7 +35,7 @@
 <% else %>
   <h1>Your accepted booking</h1>
     <div class="card-product">
-  <% @booking_pending.each do |booking| %>
+  <% @booking_accepted.each do |booking| %>
   <img src="<%= cl_image_path booking.motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>"/>
   <div class="card-product-infos">
     <h2><%= booking.motorcycle.year %> <%= booking.motorcycle.brand %> <%= booking.motorcycle.model %></h2>
