@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<div id="container">
   <div id="header">
     <head>
       <title>AirMoto</title>
@@ -14,20 +13,20 @@
       <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
     </head>
   </div>
+  
   <div id="body">
     <body>
+    <div id="container">
+
 
     <%= render 'shared/navbar'%>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    </div>
 
     </body>
   </div>
 
-  <div id="footer">
     <%= render 'shared/footer'%>
-  </div>
-</div>
 
 </html>
-
