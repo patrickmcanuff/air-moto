@@ -3,11 +3,14 @@
 <div class="cards">
   <% @motorcycles_user.each do |motorcycle| %>
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>')">
-      <%= motorcycle.year %><br>
-      <%= motorcycle.brand %><br>
-      <%= motorcycle.model %><br>
-      <%= motorcycle.location %><br>
-      <%= link_to 'Delete this post', motorcycle_path(motorcycle.id), method: :delete, :data => {:confirm => 'Are you sure? '}, class: 'moto-info' %>
+      <td><%= motorcycle.year %></td>
+      <td><%= motorcycle.brand %></td>
+      <td><%= motorcycle.model %></td>
+      <br>
+      <td><%= motorcycle.location %></td>
+      <br>
+      <td>$<%= motorcycle.price %>/day</td>
+      <%= link_to 'Delete', motorcycle_path(motorcycle.id), method: :delete, :data => {:confirm => 'Are you sure? '}, class: 'moto-info' %>
     </div>
   <% end %>
 </div>
