@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<div id="container">
   <div id="header">
     <head>
       <title>AirMoto</title>
@@ -16,10 +15,13 @@
   </div>
   <div id="body">
     <body>
+    <div id="container">
+
 
     <%= render 'shared/navbar'%>
     <%= render 'shared/flashes' %>
     <%= yield %>
+    </div>
 
     </body>
   </div>
@@ -27,7 +29,6 @@
   <div id="footer">
     <%= render 'shared/footer'%>
   </div>
-</div>
 
 </html>
 
