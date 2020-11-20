@@ -1,8 +1,12 @@
 <div>
   <h1>All of our motorcycles</h1>
-</div>
+  <p>Choose between <%= Motorcycle.count %> motorcycles.</p>
 
-<p>Choose between <%= Motorcycle.count %> motorcycles.</p>
+</div>
+<br>
+<br>
+
+<div class="container">
 <div class="cards">
 <% @motorcycles.each do |motorcycle| %>
   <% if motorcycle.photos.empty? %>
@@ -35,4 +39,9 @@
 
   <% end %>
 <% end %>
+<br>
 </div>
+<div>
+
+<br>
+<br>

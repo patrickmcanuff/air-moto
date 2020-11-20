@@ -1,3 +1,4 @@
+<br>
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -6,13 +7,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100"  src= "<%= cl_image_path @motorcycle.photos[0].key, crop: :fill %>" alt="moto 2nd photo" >
+      <img class="d-block w-100"  src= "<%= cl_image_path @motorcycle.photos[0].key, crop: :fill %>", height: "300", width:"550">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<%= cl_image_path @motorcycle.photos[1].key,crop: :fill %>" alt="moto 2nd photo" >
+      <img class="d-block w-100" src="<%= cl_image_path @motorcycle.photos[1].key,crop: :fill %>" alt="moto 2nd photo" height: 300, width: 400 >
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<%= cl_image_path @motorcycle.photos[2].key, crop: :fill %>" alt="moto 3rd photo" >
+      <img class="d-block w-100" src="<%= cl_image_path @motorcycle.photos[2].key, crop: :fill %>" alt="moto 3rd photo" height: 300, width: 400 >
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -24,15 +25,22 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <div class="col-md-6 offset-md-3 mt-5" style="margin:0 auto">
-  <p><%= @motorcycle.brand %>
-    <%= @motorcycle.model %></p>
-  <p>Year: <%= @motorcycle.year %></p>
-  <p>Location: <%= @motorcycle.location %></p>
-  <p>Owner: <%= @motorcycle.user.name%></p>
+  <div class="card-header">
+    The bike
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item" id="name"><%= @motorcycle.brand %>
+    <%= @motorcycle.model %> <%= @motorcycle.year %>
+    <br>
+   <id="stars"> 4.93&#9733;       (32 trips)</id></li>
+    <li class="list-group-item"><strong>Location:</strong> <%= @motorcycle.location %></li>
+    <li class="list-group-item"><strong>Owner:</strong> <%= @motorcycle.user.name%></li>
+    <li class="list-group-item"><strong>Price per day:</strong> <%= @motorcycle.price%></li>
+  </ul>
 </div>
-
+</div>
+<div class="col-md-6 offset-md-3 mt-5" style="margin:0 auto">
 <div>
   <% if current_user != @motorcycle.user %>
     <%= simple_form_for([@motorcycle, @booking]) do |f| %>
@@ -41,4 +49,7 @@
       <%= f.button :submit, "Book this motorcycle", class: "btn btn-success" %>
     <% end %>
   <% end %>
+  <br>
+  <br>
+</div>
 </div>

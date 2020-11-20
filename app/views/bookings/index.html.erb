@@ -1,6 +1,8 @@
 <h1 class="mb-5">Your bookings</h1>
 
+<div class ="container">
 <div class="cards">
+<div class="row align-items-end">
   <% @bookings.each do |booking| %>
     <% if booking.motorcycle.photos.empty? %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path "https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg", height: 300, width: 400, crop: :fill %>')">
@@ -25,3 +27,6 @@
     <% end %>
   <% end %>
 </div>
+<div>
+</div>
+
