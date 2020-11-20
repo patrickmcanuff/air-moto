@@ -23,11 +23,11 @@
   <tr>
     <td><%= motorcycle.brand %></td>
     <td><%= motorcycle.model %></td>
-    <td><%= motorcycle.year %></td>
+    <td>(<%= motorcycle.year %>)</td>
     <br>
     <td><%= motorcycle.location %></td>
     <br>
-    <td><%= motorcycle.price %>$/per day</td>
+    <td>$<%= motorcycle.price %>/day</td>
  </tr>
  <%= link_to 'More info', motorcycle_path(motorcycle), class: "moto-info" %>
 
