@@ -28,18 +28,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa59dfef-1a88-4f2d-94f9-a32c6ec2b567" name="Default Changelist" comment="Search working on front end now too. Need to fix positioning and styling still.">
-      <change afterPath="$PROJECT_DIR$/app/assets/stylesheets/components/_footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/shared/_footer.html.erb" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/components/_index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/components/_index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/motorcycle.rb" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/motorcycle.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/bookings/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/bookings/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/motorcycles/index.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/motorcycles/index.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/motorcycles/show.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/motorcycles/show.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/users/show_motorcycle.html.erb" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/users/show_motorcycle.html.erb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/schema.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/schema.rb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db/seeds.rb" beforeDir="false" afterPath="$PROJECT_DIR$/db/seeds.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/assets/stylesheets/pages/_home.scss" beforeDir="false" afterPath="$PROJECT_DIR$/app/assets/stylesheets/pages/_home.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -252,7 +242,7 @@
       <workItem from="1605815875315" duration="152000" />
       <workItem from="1605816030528" duration="26000" />
       <workItem from="1605816058879" duration="10050000" />
-      <workItem from="1605827996927" duration="3836000" />
+      <workItem from="1605827996927" duration="4313000" />
     </task>
     <task id="LOCAL-00001" summary="Added text border, made shape more square to accommodate, changed position of text">
       <created>1605723960527</created>
