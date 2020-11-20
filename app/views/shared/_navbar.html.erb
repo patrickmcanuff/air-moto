@@ -1,7 +1,6 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-<a class="navbar-brand" href="">
-<%= link_to image_tag("https://i.pinimg.com/originals/bd/cb/2a/bdcb2a6b875edc22b436a6a0afcb6481.jpg", :border=>0, :class => 'dock-item'), 
-:action => 'home', :controller =>> 'motorcycles'%></a>
+<%# <a class="navbar-brand" href"logo.jpg" %>
+<%= link_to image_tag("https://i.pinimg.com/originals/bd/cb/2a/bdcb2a6b875edc22b436a6a0afcb6481.jpg", :border=>0, :class => 'dock-item'),root_path, class: 'navbar-brand' %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -28,9 +27,13 @@
        <a class="nav-link"><%= link_to "Sign Up", new_user_registration_path %> </a>
      <% end %>
      </li>
-     
+
       <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"/>
+        <% if user_signed_in? && current_user.avatar.present? %>
+          <%= cl_image_tag current_user.avatar, crop: :fill, class: "avatar dropdown-toggle", id: "navbarDropdown", data: {toggle: "dropdown"}, aria: {haspopup: "true", expanded: "false"}%>
+        <% else %>
+          <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"/>
+        <% end %>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
           <% if user_signed_in? == false %>
             <%= link_to 'Login', user_session_path, class: 'dropdown-item' %>
