@@ -19,8 +19,7 @@ Motorcycle.destroy_all
 puts "Destroying users..."
 User.destroy_all
 
-puts "Creating users..."
-
+puts "Creating John Wick..."
 file = URI.open('https://avatarfiles.alphacoders.com/224/thumb-224371.jpg')
 johnwick = User.new(
     email: "johnwick@gmail.com",
@@ -33,6 +32,7 @@ johnwick = User.new(
     johnwick.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     johnwick.save
 
+puts "Creating users..."
 file = URI.open("https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png")
 15.times do
   user = User.new(
@@ -44,7 +44,7 @@ file = URI.open("https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960
       drivers_license_number: Faker::DrivingLicence.british_driving_licence,
       avatar: "https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"
       )
-    # user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
     user.save
   #fetch user profile photo from cloudinary
   #attach photo to user photo.user.attach
