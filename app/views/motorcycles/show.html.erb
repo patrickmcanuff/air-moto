@@ -7,13 +7,13 @@
   </ol>
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="https://s3.eu-west-1.amazonaws.com/cdn.motorbikemag.es/wp-content/uploads/2016/09/Yamaha-YZF-R1-2017-galeria-004-1100x470.jpg" alt="moto 1st photo" width="640" height="550">
+      <img class="d-block w-100"  src= "<%= cl_image_path @motorcycle.photos[0].key, crop: :fill %>", height: "300", width:"550">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://www.totalmotorcycle.com/wp-content/uploads/2020/10/2021-Yamaha-YZF-R1M1.jpg" alt="moto 2nd photo" width="640" height="550">
+      <img class="d-block w-100" src="<%= cl_image_path @motorcycle.photos[0].key,crop: :fill %>" alt="moto 2nd photo" height: 300, width: 400 >
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="https://cdn-tp3.mozu.com/27878-44719/cms/44719/files/495ac720-0223-4fe7-beab-33e885692ff4?quality=60&_mzcb=_1601037526840" alt="moto 3rd photo" width="640" height="550">
+      <img class="d-block w-100" src="<%= cl_image_path @motorcycle.photos[0].key, crop: :fill %>" alt="moto 3rd photo" height: 300, width: 400 >
     </div>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -32,11 +32,19 @@
   <p>Year: <%= @motorcycle.year %></p>
   <p>Location: <%= @motorcycle.location %></p>
   <p>Owner: <%= @motorcycle.user.name%></p>
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>')">
-  <tr>
-
 </div>
 
+
+
+<div>
+  <% if current_user != @motorcycle.user %>
+    <%= simple_form_for([@motorcycle, @booking]) do |f| %>
+      <%= f.input :date_start %>
+      <%= f.input :date_end %>
+      <%= f.submit %>
+    <% end %>
+  <% end %>
+</div>
 
 
 

@@ -38,16 +38,14 @@ johnwick = User.create(
       )
 end
 
-puts "Creating motorcycles..."
-moto1 = Motorcycle.create!(year: "2018", brand: "Aprilia", model: "Shiver 900", location: "Lisbon, Portugal", user: User.second, price: 180)
 
-puts "Creating bookings..."
-Booking.create(
-    motorcycle: moto1,
-    user: johnwick,
-    date_start: Time.new(2021, 1, 2),
-    date_end: Time.new(2021, 1, 14),
-)
+# puts "Creating bookings..."
+# Booking.create(
+#     motorcycle: moto1,
+#     user: johnwick,
+#     date_start: Time.new(2021, 1, 2),
+#     date_end: Time.new(2021, 1, 14),
+# )
 
 puts "Creating motorcycle"
 file = URI.open('https://res.cloudinary.com/dwxhfawho/image/upload/v1605666105/air-moto/2019_Honda_CB1000R/2019_Honda_CB1000R_1_ybhirw.jpg')
