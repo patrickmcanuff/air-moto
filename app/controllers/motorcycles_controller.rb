@@ -62,9 +62,14 @@ class MotorcyclesController < ApplicationController
     end
   end
 
+  def live_user_booking
+    @booking = Booking.joins(:motorcycle).where(motorcycles: { user: current_user })
+    render json: { bookings: @booking }
+  end
+
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:model, :year, :location, :brand, photos: [])
+    params.require(:motorcycle).permit(:model, :year, :location, :brand, :price, photos: [])
   end
 end
