@@ -3,9 +3,20 @@ class MotorcyclesController < ApplicationController
 
   def index
     if params[:query].present?
-      @motorcycles = Motorcycle.search_by_location(params[:query])
+      # @motorcycles = Motorcycle.search_by_location(params[:query])
+      location = params[:query]
+      date_start = params[:date_start][:date_start]
+      date_end = params[:date_end][:date_end]
+      @motorcycles = Motorcycle.search_by_date(date_start, date_end)
+      # @motorcycles = Motorcycle.search_by_location_and_date(:query, :date_start, :date_end)
+      # @motorcycles = Motorcycle.search_by_location_and_date(params[:location, :date_start, :date_end])
+      # @motorcycles = Motorcycle.search_by_location_and_date(params[:query, :date_start, :date_end])
     else
       @motorcycles = Motorcycle.all
+      # render(
+      #     html: "<script>alert('Sorry, there are no motorcycles available at this time :(')</script>".html_safe,
+      #     layout: 'application'
+      # )
     end
   end
 
