@@ -1,21 +1,33 @@
 <!DOCTYPE html>
 <html>
-  <head>
-  <title>AirMoto</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+<div id="container">
+  <div id="header">
+    <head>
+      <title>AirMoto</title>
+      <%= csrf_meta_tags %>
+      <%= csp_meta_tag %>
 
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
-  </head>
+<!--      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+      <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
 
-  <body>
+      <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    </head>
+  </div>
+  <div id="body">
+    <body>
+
     <%= render 'shared/navbar'%>
     <%= render 'shared/flashes' %>
     <%= yield %>
-  </body>
+
+    </body>
+  </div>
+
+  <div id="footer">
+    <%= render 'shared/footer'%>
+  </div>
+</div>
 
 </html>
 

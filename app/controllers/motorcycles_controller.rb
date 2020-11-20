@@ -3,7 +3,10 @@ class MotorcyclesController < ApplicationController
 
   def index
     if params[:query].present?
-      @motorcycles = Motorcycle.search_by_location(params[:query])
+      location = params[:query]
+      date_start = params[:date_start][:date_start]
+      date_end = params[:date_end][:date_end]
+      @motorcycles = Motorcycle.search_by_date(date_start, date_end)
     else
       @motorcycles = Motorcycle.all
     end
@@ -45,15 +48,20 @@ class MotorcyclesController < ApplicationController
       redirect_to show_motorcycle_user_path(current_user)
     else
       render(
-        html: "<script>alert('You can't delete this motorcycle post because you are not the owner')</script>".html_safe,
-        layout: 'application'
+          html: "<script>alert('You can't delete this motorcycle post because you are not the owner')</script>".html_safe,
+          layout: 'application'
       )
     end
+  end
+
+  def live_user_booking
+    @booking = Booking.joins(:motorcycle).where(motorcycles: { user: current_user })
+    render json: { bookings: @booking }
   end
 
   private
 
   def motorcycle_params
-    params.require(:motorcycle).permit(:model, :year, :location, :brand, photos: [])
+    params.require(:motorcycle).permit(:model, :year, :location, :brand, :price, photos: [])
   end
 end

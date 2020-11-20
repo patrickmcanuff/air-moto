@@ -1,33 +1,37 @@
 <div>
   <h1>All of our motorcycles</h1>
-</div>
+  <p>Choose between <%= Motorcycle.count %> motorcycles.</p>
 
-<p>Choose between <%= Motorcycle.count %> motorcycles.</p>
+</div>
+<br>
+<br>
+
+<div class="container">
 <div class="cards">
 <% @motorcycles.each do |motorcycle| %>
   <% if motorcycle.photos.empty? %>
  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path "https://res.cloudinary.com/dwxhfawho/image/upload/v1605666098/air-moto/2018_Aprilia_Shiver_900/2018_Aprilia_Shiver_900_1_aiz6s2.jpg", height: 300, width: 400, crop: :fill %>')">
  <tr>
-    <td><%= motorcycle.brand %></td>
-    <td><%= motorcycle.model %></td>
-    <td><%= motorcycle.year %></td>
+   <td><%= motorcycle.year %></td>
+   <td><%= motorcycle.brand %></td>
+   <td><%= motorcycle.model %></td>
     <br>
     <td><%= motorcycle.location %></td>
     <br>
-    <td><%= motorcycle.price %>$/per day</td>
+    <td>$<%= motorcycle.price %>/day</td>
 </tr>
 <%= link_to 'More info', motorcycle_path(Motorcycle.first), class: "moto-info" %>
 </div>
   <% else %>
   <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path motorcycle.photos[0].key, height: 300, width: 400, crop: :fill %>')">
   <tr>
+    <td><%= motorcycle.year %></td>
     <td><%= motorcycle.brand %></td>
     <td><%= motorcycle.model %></td>
-    <td><%= motorcycle.year %></td>
     <br>
     <td><%= motorcycle.location %></td>
     <br>
-    <td><%= motorcycle.price %>$/per day</td>
+    <td>$<%= motorcycle.price %>/day</td>
  </tr>
  <%= link_to 'More info', motorcycle_path(motorcycle), class: "moto-info" %>
 
@@ -35,4 +39,9 @@
 
   <% end %>
 <% end %>
+<br>
 </div>
+<div>
+
+<br>
+<br>

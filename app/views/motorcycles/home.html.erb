@@ -14,17 +14,20 @@
                                params[:query],
                                autocomplete: 'off',
                                class: "form-control",
-                               placeholder: "Location"
-            %> <%= submit_tag "Search", class: "btn btn-primary" %>
+                               placeholder: "Location",
+                               size: 40
+            %>
+            </div>
+            <div class="col">
+              <%#= date_field "start_date_input_id", "date_input_name", class: 'my_class' %>
+              <%= date_field "date_start", "date_start", class: 'form-control' %>
+            </div>
+            <div class="col">
+              <%= date_field "date_end", "date_end", class: 'form-control' %>
+            </div>
+            <%= submit_tag "Search", class: "btn btn-success" %>
           <% end %>
-        </div>
-        <div class="col">
-          <input type="date" class="form-control" placeholder="From">
-        </div>
-        <div class="col">
-          <input type="date" class="form-control" placeholder="Until">
-        </div>
-      </div>
+          </div>
     </div>
   </div>
 </div>
