@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
   def show
     @booking_pending = Booking.joins(:motorcycle).where(motorcycles: { user: current_user}, booked: 'pending')
-    @booking_accepted = Booking.where(user: current_user.id, booked: 'accepted')
+    @booking_accepted = Booking.joins(:motorcycle).where(motorcycles: { user: current_user}, booked: 'accepted')
+    # @booking_accepted = Booking.where(user: current_user.id, booked: 'accepted')
   end
 
   def show_motorcycle
