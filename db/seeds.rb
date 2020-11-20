@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+# require 'open-uri'
 
 # make accounts for teammates so that they can login, make sure all users can access own stuff
 
@@ -19,23 +20,34 @@ puts "Destroying users..."
 User.destroy_all
 
 puts "Creating users..."
-johnwick = User.create(
+
+file = URI.open('https://avatarfiles.alphacoders.com/224/thumb-224371.jpg')
+johnwick = User.new(
     email: "johnwick@gmail.com",
     password: "12345678",
     name: "John Wick",
     address: "1 Wall Street Court, New York",
     drivers_license_number: Faker::DrivingLicence.british_driving_licence,
+    avatar: "https://avatarfiles.alphacoders.com/224/thumb-224371.jpg"
     )
+    johnwick.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    johnwick.save
 
+file = URI.open("https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png")
 15.times do
-  User.create(
+  user = User.new(
       # add email and password
       email: Faker::Internet.email,
       password: Faker::Internet.password,
       name: Faker::Name.name,
       address: Faker::Address.full_address,
       drivers_license_number: Faker::DrivingLicence.british_driving_licence,
+      avatar: "https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"
       )
+    # user.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+    user.save
+  #fetch user profile photo from cloudinary
+  #attach photo to user photo.user.attach
 end
 
 

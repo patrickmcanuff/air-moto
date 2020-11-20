@@ -6,4 +6,14 @@ class User < ApplicationRecord
 
   has_many :motorcycles, dependent: :destroy
   has_many :bookings, dependent: :destroy
+  has_one_attached :photo
+
+
+  before_create :set_avatar
+
+  def set_avatar
+    if self.avatar.nil?
+      self.avatar = "https://cdn.pixabay.com/photo/2020/07/14/13/07/icon-5404125_960_720.png"
+    end
+  end
 end
